@@ -21,6 +21,7 @@ dependencies = [
   "pandas",
   "transformers",
   "matplotlib>=3.10.6",
+  "qiskit-algorithms>=0.4.0",
 ]
 
 
