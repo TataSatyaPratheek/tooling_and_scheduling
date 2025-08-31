@@ -9,18 +9,20 @@ description = "Spec-driven job shop scheduling with QUBO and QAOA"
 authors = [{ name = "vi", email = "vi@example.com" }]
 requires-python = ">=3.10"
 dependencies = [
-  "job-shop-lib",
+  "datasets", # HuggingFace datasets
+  "huggingface-hub", # Authentication
   "qiskit-optimization",
   "qiskit-aer",
-  # If upgrading to Pydantic v2, instead use:
   "fastapi",
-  "uvicorn",
   "streamlit",
   "dvc",
   "pytest",
   "numpy",
   "pandas",
+  "transformers",
+  "matplotlib>=3.10.6",
 ]
+
 
 # If staying on FastAPI 0.95.x, keep Pydantic v1:
 # Add this line under [project].dependencies:
