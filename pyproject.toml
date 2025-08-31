@@ -1,0 +1,42 @@
+[build-system]
+requires = ["hatchling>=1.25.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tooling_and_scheduling"
+version = "0.1.0"
+description = "Spec-driven job shop scheduling with QUBO and QAOA"
+authors = [{ name = "vi", email = "vi@example.com" }]
+requires-python = ">=3.10"
+dependencies = [
+  "job-shop-lib",
+  "qiskit-optimization",
+  "qiskit-aer",
+  # If upgrading to Pydantic v2, instead use:
+  "fastapi",
+  "uvicorn",
+  "streamlit",
+  "dvc",
+  "pytest",
+  "numpy",
+  "pandas",
+]
+
+# If staying on FastAPI 0.95.x, keep Pydantic v1:
+# Add this line under [project].dependencies:
+# "pydantic>=1.10.17,<2.0.0"
+# If upgrading FastAPI to a v2-compatible release, pin Pydantic v2:
+# "pydantic>=2.7.0,<3.0.0"
+
+[dependency-groups]
+dev = [
+  "black",
+  "flake8",
+  "isort",  # latest stable series for isort is 5.x
+]
+
+# Optional: Expose runnable entry points to Python callables (not shell commands).
+# Create tiny wrappers like tooling_and_scheduling/cli.py with functions and wire them here.
+# [project.scripts]
+# start-api = "tooling_and_scheduling.cli:run_api"
+# start-ui = "tooling_and_scheduling.cli:run_ui"
